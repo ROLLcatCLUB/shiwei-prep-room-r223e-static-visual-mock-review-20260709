@@ -1,0 +1,29 @@
+﻿{
+    "repository":  "ROLLcatCLUB/shiwei-prep-room-r223e-static-visual-mock-review-20260709",
+    "stage_id":  "1013R_R223E_STATIC_VISUAL_MOCK_FIXTURE",
+    "status":  "PASS_LOCAL_STATIC_VISUAL_MOCK_FIXTURE",
+    "validator":  {
+                      "passed":  true,
+                      "checks":  53,
+                      "failed":  0
+                  },
+    "screenshot_smoke":  {
+                             "passed":  true,
+                             "file":  "R223E_screenshot_smoke_result.md",
+                             "screenshot":  "R223E_static_visual_mock_screenshot.png"
+                         },
+    "zip":  {
+                "file":  "review_packages/1013R_R223E_STATIC_VISUAL_MOCK_FIXTURE_REVIEW.zip",
+                "sha256":  "1C9B4AFA849F587ED20861923BF39E0DCDFFFCC6B9A70B6C5EE004E82A7CFA55",
+                "entry_count":  21,
+                "backslash_entries":  false
+            },
+    "boundary":  {
+                     "formal_ui":  false,
+                     "r97b_modified":  false,
+                     "frontend_backend_modified":  false,
+                     "runtime_enabled":  false,
+                     "provider_model_prompt_db":  false,
+                     "formal_apply":  false
+                 }
+}

@@ -1,0 +1,51 @@
+{
+  "bodyClientWidth": 1265,
+  "bodyScrollHeight": 1067,
+  "bodyScrollWidth": 1265,
+  "bottomNonChat": true,
+  "bottomRect": {
+    "bottom": 1052.78125,
+    "height": 44,
+    "left": 14,
+    "right": 1251,
+    "top": 1008.78125,
+    "width": 1237,
+    "x": 14,
+    "y": 1008.78125
+  },
+  "canvasRect": {
+    "bottom": 592,
+    "height": 510,
+    "left": 234,
+    "right": 991,
+    "top": 82,
+    "width": 757,
+    "x": 234,
+    "y": 82
+  },
+  "dailyComponentCount": 3,
+  "dailyMax": 3,
+  "defaultCollapsed": "ordinary_gaps ordinary_assumptions non_selected_bindings full_reasoning_chain",
+  "defaultOpen": "prep_canvas focused_section_card current_component_suggestion_strip",
+  "forbiddenChat": [],
+  "highRiskVisible": true,
+  "noChatPlaceholder": true,
+  "noGlobalComponentShelf": true,
+  "ordinaryGapsFolded": true,
+  "quickComponentCount": 2,
+  "quickMax": 2,
+  "r97bModified": "false",
+  "runtime": "false",
+  "selectedOnlyBinding": true,
+  "stage": "R223E",
+  "staticMock": "true",
+  "title": "R223E Static Visual Mock Fixture",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "http://127.0.0.1:8792/R223E_static_visual_mock_fixture.html",
+  "screenshot": "D:/Documents/SmartEdu/xiaobei-core/outputs/PREP_ROOM_RENDER_CANVAS_DEEPEN_V1/1013R_R223E_STATIC_VISUAL_MOCK_FIXTURE/R223E_static_visual_mock_screenshot.png",
+  "screenshotBytes": 123456,
+  "passed": true
+}

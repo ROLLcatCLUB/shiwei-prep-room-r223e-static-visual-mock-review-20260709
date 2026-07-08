@@ -1,0 +1,168 @@
+{
+  "stage_id": "1013R_R223A_P1_COMPONENT_AWARE_MINIMAL_WORKBENCH_PLANNING_GATE",
+  "artifact": "component_recommendation_fixture",
+  "status": "static_planning_fixture",
+  "max_visible_components_per_section": 3,
+  "all_12_components_are_not_shown_as_buttons": true,
+  "recommendation_inputs": [
+    "lesson_mode",
+    "lesson_section",
+    "lesson_dna_or_archetype",
+    "student_problem",
+    "media_availability",
+    "evidence_bottom_line"
+  ],
+  "component_slots": [
+    {
+      "lesson_mode": "daily_prep",
+      "lesson_sample": "有趣的纸印",
+      "lesson_section": "材料与印痕探究",
+      "student_problem": "学生不清楚纸材、按压和工具如何影响印痕。",
+      "recommended_components": [
+        "material_mystery_box",
+        "technique_step_demo",
+        "learning_sheet_record"
+      ],
+      "display_limit": 3,
+      "teacher_visible_reason": "这组组件先让学生试材料，再看关键步骤，最后留下试印证据。",
+      "required_media_summary": [
+        "3-5种纸材或替代材料",
+        "滚印/拓印步骤图或短视频",
+        "试印记录学习单"
+      ],
+      "evidence_summary": [
+        "试印小样",
+        "材料效果记录",
+        "步骤核对或错误修正"
+      ],
+      "screen_prompt_summary": [
+        "材料盲盒：摸特点，试效果。",
+        "技法拆解：看步骤，试一次。"
+      ],
+      "teacher_actions": [
+        "confirm_component_group",
+        "replace_one_component",
+        "delete_optional_component"
+      ]
+    },
+    {
+      "lesson_mode": "daily_prep",
+      "lesson_sample": "有趣的文字和图画",
+      "lesson_section": "文字图像关系观察",
+      "student_problem": "学生容易把课上成识字或装饰字，不能说明文字和图画如何互相帮助。",
+      "recommended_components": [
+        "compare_two_images",
+        "circle_and_annotate",
+        "match_cards"
+      ],
+      "display_limit": 3,
+      "teacher_visible_reason": "这组组件用对比、圈注和匹配把“字形-图像-字义”的关系显性化。",
+      "required_media_summary": [
+        "2张有差异的字卡",
+        "可圈注字形图",
+        "象形字/字义/图画提示卡"
+      ],
+      "evidence_summary": [
+        "圈注位置",
+        "图文关系说明",
+        "匹配理由"
+      ],
+      "screen_prompt_summary": [
+        "比一比：找差异，说依据。",
+        "圈一圈：圈关键处，写理由。"
+      ],
+      "teacher_actions": [
+        "confirm_component_group",
+        "replace_one_component",
+        "delete_optional_component"
+      ]
+    },
+    {
+      "lesson_mode": "daily_prep",
+      "lesson_sample": "会说话的手",
+      "lesson_section": "手势观察与视觉转译",
+      "student_problem": "学生可能只表演，不留下手势、线稿、手印角色等视觉证据。",
+      "recommended_components": [
+        "circle_and_annotate",
+        "technique_step_demo",
+        "photo_submit"
+      ],
+      "display_limit": 3,
+      "teacher_visible_reason": "这组组件先标出手势表达依据，再拆解手印角色方法，最后收过程图证据。",
+      "required_media_summary": [
+        "手势图片或暂停帧",
+        "手印角色步骤图",
+        "拍照提交节点"
+      ],
+      "evidence_summary": [
+        "手势圈注图",
+        "半成品步骤照片",
+        "最终手印角色"
+      ],
+      "screen_prompt_summary": [
+        "圈一圈：圈关键处，写理由。",
+        "拍照提交：拍证据，写看点。"
+      ],
+      "teacher_actions": [
+        "confirm_component_group",
+        "replace_one_component",
+        "delete_optional_component"
+      ]
+    },
+    {
+      "lesson_mode": "quick_prep",
+      "lesson_sample": "美术大家庭",
+      "lesson_section": "生活中的美术门类连接",
+      "student_problem": "学生只背门类名称，不能把校园和生活例子连到美术大家庭。",
+      "recommended_components": [
+        "match_cards",
+        "learning_sheet_record"
+      ],
+      "display_limit": 2,
+      "teacher_visible_reason": "快速稿只保留关系匹配和最小证据记录，避免增加课堂负担。",
+      "required_media_summary": [
+        "校园或生活图片卡",
+        "门类名称卡",
+        "一格关系记录"
+      ],
+      "evidence_summary": [
+        "一条图片-门类连线",
+        "一个生活用途理由"
+      ],
+      "screen_prompt_summary": [
+        "连连看：连图、连词、连理由。"
+      ],
+      "teacher_actions": [
+        "confirm_component_group",
+        "delete_optional_component"
+      ]
+    },
+    {
+      "lesson_mode": "quick_prep",
+      "lesson_sample": "有趣的纸印",
+      "lesson_section": "保底可上课试印链",
+      "student_problem": "快速备课时容易只写材料和步骤，漏掉印痕证据底线。",
+      "recommended_components": [
+        "technique_step_demo",
+        "learning_sheet_record"
+      ],
+      "display_limit": 2,
+      "teacher_visible_reason": "快速稿只保留关键技法和最小试印证据，保证明天能上。",
+      "required_media_summary": [
+        "关键步骤图或教师现场示范",
+        "试印记录栏"
+      ],
+      "evidence_summary": [
+        "一条试印记录",
+        "一个步骤提醒"
+      ],
+      "screen_prompt_summary": [
+        "技法拆解：看步骤，试一次。"
+      ],
+      "teacher_actions": [
+        "confirm_component_group",
+        "delete_optional_component"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>R223E Static Visual Mock Fixture</title>
+  <style>
+    :root {
+      --ink: #1e312d;
+      --muted: #66736f;
+      --line: #d8e2de;
+      --soft: #f7faf8;
+      --paper: #fffdf8;
+      --accent: #2f7f70;
+      --accent-2: #d98b35;
+      --warn: #b4641e;
+      --blue: #3d6f9f;
+      --shadow: 0 10px 30px rgba(32, 52, 47, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: #eef4f1;
+      letter-spacing: 0;
+    }
+    .mock-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+      padding: 14px;
+    }
+    .topbar {
+      height: 58px;
+      display: grid;
+      grid-template-columns: 240px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+    }
+    .brand { font-weight: 800; color: var(--accent); font-size: 18px; }
+    .mode-rail { display: flex; gap: 8px; justify-content: center; }
+    .mode-card {
+      min-width: 116px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .mode-card.active {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    .boundary-chip { font-size: 12px; color: var(--muted); border: 1px solid var(--line); padding: 7px 10px; background: var(--soft); }
+    .workbench {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 210px minmax(620px, 1fr) 250px;
+      grid-template-rows: minmax(510px, 1fr) auto;
+      gap: 10px;
+    }
+    .rail, .canvas, .binding-panel, .component-strip, .quick-panel {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.95);
+      box-shadow: var(--shadow);
+    }
+    .rail { padding: 12px; overflow: hidden; }
+    .rail h2, .binding-panel h2, .canvas h2 { margin: 0 0 10px; font-size: 15px; }
+    .risk-card {
+      border-left: 4px solid var(--warn);
+      background: #fff6ec;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .fold-row {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .canvas { padding: 18px; overflow: hidden; }
+    .lesson-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .lesson-title { font-size: 22px; font-weight: 800; }
+    .density-note { color: var(--muted); font-size: 12px; }
+    .section-card {
+      border: 2px solid rgba(47,127,112,.35);
+      background: var(--paper);
+      padding: 16px;
+      min-height: 330px;
+    }
+    .section-title { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: var(--accent); }
+    .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .field { border: 1px solid #e5eee9; background: #fff; padding: 10px; min-height: 72px; }
+    .field label { display: block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+    .field p { margin: 0; font-size: 13px; line-height: 1.55; }
+    .binding-panel { padding: 12px; overflow: hidden; }
+    .binding-panel.collapsed { background: #f8fbfa; color: var(--muted); }
+    .binding-slot {
+      border: 1px dashed #b9cac4;
+      padding: 12px;
+      min-height: 180px;
+      font-size: 12px;
+      line-height: 1.6;
+      background: #fff;
+    }
+    .binding-slot.active { border-style: solid; border-color: var(--accent); }
+    .binding-title { font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+    .component-strip {
+      grid-column: 1 / 4;
+      padding: 12px;
+      min-height: 136px;
+    }
+    .strip-title { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+    .component-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .component-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 10px;
+      min-height: 94px;
+    }
+    .component-card.selected { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .component-card h3 { margin: 0 0 6px; font-size: 14px; }
+    .component-card p { margin: 0 0 6px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .actions { display: flex; gap: 6px; }
+    .actions span { border: 1px solid var(--line); padding: 3px 6px; font-size: 11px; color: var(--accent); background: var(--soft); }
+    .local-input {
+      height: 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .input-placeholder { border: 1px solid #dbe6e1; background: #fff; height: 28px; display: flex; align-items: center; padding: 0 10px; }
+    .input-action { color: var(--accent); font-weight: 700; }
+    .quick-panel { margin-top: 12px; padding: 14px; }
+    .quick-layout { display: grid; grid-template-columns: 1fr 280px; gap: 12px; }
+    .quick-steps { border: 1px solid var(--line); background: #fff; padding: 12px; }
+    .quick-steps h3 { margin: 0 0 8px; font-size: 16px; }
+    .quick-steps ol { margin: 0; padding-left: 20px; font-size: 13px; line-height: 1.7; }
+    .quick-components { display: grid; gap: 8px; }
+    .quick-components .component-card { min-height: 84px; }
+    .smoke-markers { display: none; }
+    @media (max-width: 1120px) {
+      .workbench { grid-template-columns: 180px minmax(520px, 1fr); }
+      .binding-panel { display: none; }
+      .component-strip { grid-column: 1 / 3; }
+      .component-grid { grid-template-columns: repeat(3, minmax(150px, 1fr)); }
+    }
+  </style>
+</head>
+<body data-stage="R223E" data-static-mock="true" data-r97b-modified="false" data-runtime="false">
+  <main class="mock-shell" data-default-open="prep_canvas focused_section_card current_component_suggestion_strip" data-default-collapsed="ordinary_gaps ordinary_assumptions non_selected_bindings full_reasoning_chain">
+    <header class="topbar">
+      <div class="brand">师维智教 · 备课工作台静态 Mock</div>
+      <nav class="mode-rail" aria-label="mode rail">
+        <div class="mode-card">精备</div>
+        <div class="mode-card active" data-selected-mode="daily_prep">日常</div>
+        <div class="mode-card">快速</div>
+      </nav>
+      <div class="boundary-chip">static fixture · no R97B · no runtime</div>
+    </header>
+
+    <section class="workbench" aria-label="daily density mock">
+      <aside class="rail" data-region="source_gap_rail" data-default="folded_except_high_risk">
+        <h2>资料与风险</h2>
+        <div class="risk-card" data-high-risk-visible="true">高风险确认：学校可用纸材与滚印工具需确认。未确认前保留替代材料方案。</div>
+        <div class="fold-row"><span>普通资料缺口</span><strong>折叠</strong></div>
+        <div class="fold-row"><span>系统假设</span><strong>折叠</strong></div>
+        <div class="fold-row"><span>完整推理链</span><strong>折叠</strong></div>
+      </aside>
+
+      <section class="canvas" data-region="prep_canvas" data-primary-reading-object="true">
+        <div class="lesson-header">
+          <div>
+            <div class="lesson-title">有趣的纸印 · 日常备课</div>
+            <div class="density-note">主画布优先；组件只服务当前聚焦环节</div>
+          </div>
+          <div class="density-note">3–5 环节 · 明天可上</div>
+        </div>
+        <article class="section-card" data-focused-section="材料与印痕探究">
+          <div class="section-title">聚焦环节：材料与印痕探究</div>
+          <div class="section-grid">
+            <div class="field"><label>教师动作</label><p>引导学生摸一摸不同纸材，再用同一方法试印，观察印痕差异。</p></div>
+            <div class="field"><label>学生动作</label><p>摸材料、试印一次，圈出最清楚或最有层次的印痕。</p></div>
+            <div class="field"><label>材料需求</label><p>3–5 种纸材或替代材料，滚印/拓印工具，试印纸。</p></div>
+            <div class="field"><label>证据底线</label><p>至少留下一条试印记录和材料效果理由。</p></div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="binding-panel collapsed" data-region="binding_preview" data-open-policy="selected_component_only">
+        <h2>绑定预览</h2>
+        <div class="binding-slot active" data-selected-component="material_mystery_box">
+          <div class="binding-title">选中：材料盲盒</div>
+          <div>大屏：材料盲盒：摸特点，试效果。</div>
+          <div>学习单：材料 / 触感 / 试印效果 / 适合表现</div>
+          <div>教师语言：先让材料自己说话，摸一摸、试一试。</div>
+          <div>证据：试印小样 + 材料效果记录</div>
+        </div>
+      </aside>
+
+      <section class="component-strip" data-region="component_strip" data-max-components-daily="3" data-not-toolbox="true">
+        <div class="strip-title"><span>当前环节组件建议 · 3 / 3</span><span>不显示 12 个组件按钮</span></div>
+        <div class="component-grid">
+          <article class="component-card selected" data-component-id="material_mystery_box"><h3>材料盲盒</h3><p>问题：学生不清楚材料如何影响印痕。</p><p>证据：试印小样 + 材料效果记录</p><div class="actions"><span>确认</span><span>替换</span><span>删除</span></div></article>
+          <article class="component-card" data-component-id="technique_step_demo"><h3>技法拆解</h3><p>问题：步骤、力度和揭起方向不清楚。</p><p>证据：步骤核对或错误修正</p><div class="actions"><span>确认</span><span>替换</span><span>删除</span></div></article>
+          <article class="component-card" data-component-id="learning_sheet_record"><h3>学习单记录</h3><p>问题：过程发生了但没有证据。</p><p>证据：材料与印痕记录栏</p><div class="actions"><span>确认</span><span>替换</span><span>删除</span></div></article>
+        </div>
+      </section>
+    </section>
+
+    <section class="quick-panel" data-region="quick_mode_check" data-max-components-quick="2">
+      <div class="quick-layout">
+        <div class="quick-steps">
+          <h3>快速模式：保底可上课试印链</h3>
+          <ol>
+            <li>出示材料和工具，明确今天先看印痕。</li>
+            <li>教师示范关键步骤：上色、按压、揭起、清理。</li>
+            <li>学生试印一次，圈出最清楚的一次。</li>
+            <li>用一句话写出材料或方法原因。</li>
+          </ol>
+        </div>
+        <div class="quick-components">
+          <article class="component-card" data-component-id="technique_step_demo"><h3>技法拆解</h3><p>证据：步骤提醒</p></article>
+          <article class="component-card" data-component-id="learning_sheet_record"><h3>学习单记录</h3><p>证据：一条试印记录</p></article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="local-input" data-region="bottom_input" data-non-chat="true">
+      <div class="input-placeholder">补充本环节材料限制...</div>
+      <div class="input-action">添加局部说明</div>
+    </footer>
+
+    <div class="smoke-markers" data-no-global-component-shelf="true" data-no-chat-placeholder="true" data-formal-ui="false">R223E smoke markers</div>
+  </main>
+</body>
+</html>

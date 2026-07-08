@@ -1,0 +1,124 @@
+{
+  "stage_id": "1013R_R223E_STATIC_VISUAL_MOCK_FIXTURE",
+  "created_at": "2026-07-08T19:37:37.896188+00:00",
+  "status": "PASS_LOCAL_STATIC_VISUAL_MOCK_FIXTURE",
+  "boundary": {
+    "formal_ui": false,
+    "r97b_modified": false,
+    "frontend_backend_modified": false,
+    "runtime_enabled": false,
+    "provider_model_prompt_db": false,
+    "formal_apply": false,
+    "real_component_interaction": false
+  },
+  "validator": "validate_1013R_R223E_static_visual_mock_fixture.py",
+  "validator_result": "validate_1013R_R223E_static_visual_mock_fixture_result.json",
+  "screenshot_smoke": {
+    "markdown": "R223E_screenshot_smoke_result.md",
+    "json": "R223E_screenshot_smoke_result.json",
+    "screenshot": "R223E_static_visual_mock_screenshot.png"
+  },
+  "file_count": 21,
+  "files": [
+    {
+      "path": "_REFERENCE_INPUTS/R223A_P1/R223A_P1_component_recommendation_fixture.json",
+      "bytes": 5754,
+      "sha256": "0A2BFE30B2756D1E56EF6D201F8FE44C5FE0B422931F92C3AE90A763B9EA91CE"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223B/R223B_static_wireframe_fixture.md",
+      "bytes": 4095,
+      "sha256": "DEAA88E6AC15956B0629F47E3A41E2E73B59D8F3D36778133B609256A3DBBC3D"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223C/R223C_information_density_review.md",
+      "bytes": 1121,
+      "sha256": "B22E69EBF8FCDB789C1E169A60C9B256182D96FF8E9343DD3877B74CD510F648"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223D/R223D_bottom_input_non_chat_visual_policy.md",
+      "bytes": 870,
+      "sha256": "98100692F0441A32251CFB7519671C2E436447014E512AFEE2150BEA64B74EA9"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223D/R223D_carrier_layout_options.md",
+      "bytes": 1383,
+      "sha256": "0507AD024FC497BEF07B50EE0DF5BDEEE477F3A05AE82229FD9EDE08D12F520F"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223D/R223D_component_strip_density_check.md",
+      "bytes": 895,
+      "sha256": "CF84C38D755EC7DF45AC86420C6D865B2C024A21519D11AAD96E272B1091215A"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223D/R223D_default_collapse_expand_policy.json",
+      "bytes": 1144,
+      "sha256": "9F1D79E28557FE5CC26CE7A48462066B1B69D4EEF04607B91E361AE1FE811C48"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223D/R223D_static_visual_mock_description.md",
+      "bytes": 1321,
+      "sha256": "4BC02940E7EDA6BDC1B7E83EA82690D644FCDFE7DFA8EBAD50A35DEF20B1917D"
+    },
+    {
+      "path": "_REFERENCE_INPUTS/R223D/R223D_visual_density_review.md",
+      "bytes": 2092,
+      "sha256": "AAD90CE913DC8F918F53CA3783A107FFDED6B89289D8BC0AD4843CE1F55157CA"
+    },
+    {
+      "path": "R223E_density_compliance_check.md",
+      "bytes": 1320,
+      "sha256": "538DAE0DD48F0641B32BECDA818FD0D0F599C50A759C01E33A16A0C3D739FC99"
+    },
+    {
+      "path": "R223E_report.md",
+      "bytes": 721,
+      "sha256": "A1B69319728922293443403030E48FAD7E8F6A7735EE01466168F5846FCB9FFE"
+    },
+    {
+      "path": "R223E_screenshot_smoke_result.json",
+      "bytes": 1389,
+      "sha256": "33F47974A1EE56DE5EBD41AB69381FD24F28664BBC367344FE22A4ADFE5C49CC"
+    },
+    {
+      "path": "R223E_screenshot_smoke_result.md",
+      "bytes": 1817,
+      "sha256": "788D12520386E60FD5A82EC6097FD8B2DD75E6175F72548BC8D695B0C67E7F37"
+    },
+    {
+      "path": "R223E_static_visual_mock_fixture.html",
+      "bytes": 12357,
+      "sha256": "731AB52F5FF764559869B029666194A75AD1297F7EFF743A3E405BD76ABCAA4F"
+    },
+    {
+      "path": "R223E_static_visual_mock_screenshot.png",
+      "bytes": 123456,
+      "sha256": "7224B839FE043942C05679E17BB1C9981D2FB04C14C2D715762A03A18D43D37D"
+    },
+    {
+      "path": "R223E_static_visual_mock_spec.md",
+      "bytes": 1552,
+      "sha256": "ECAFC29A68FE5D72741AE20E96F341E13B9C3ED13417A0F0327CF8E2238E2613"
+    },
+    {
+      "path": "R223E_static_visual_mock_state.json",
+      "bytes": 931,
+      "sha256": "540CA07D7C99CD3CF3D1624349A357E755FC77314723A96DA3EE13E505893277"
+    },
+    {
+      "path": "README_FOR_GPT_REVIEW.md",
+      "bytes": 656,
+      "sha256": "B7CA8F50A26249A9A114E5880C3CB193E18595D3CBB2BE9D95EEDFE7B9D0C1D3"
+    },
+    {
+      "path": "validate_1013R_R223E_static_visual_mock_fixture.py",
+      "bytes": 4896,
+      "sha256": "2862694C661331DE1758C82B0E2946FCEBEC00C78A843FBC1DB86649F2744043"
+    },
+    {
+      "path": "validate_1013R_R223E_static_visual_mock_fixture_result.json",
+      "bytes": 84,
+      "sha256": "64C4A6116DD3407C986284DDB7AA6FC189CC45A276EEDDAFAA2370970FF7D05D"
+    }
+  ]
+}
